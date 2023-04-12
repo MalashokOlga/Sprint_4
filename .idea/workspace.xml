@@ -4,26 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9653a77-1a05-4bc2-a8f5-26478238d4ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/WebDriverConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/extensions/WebDriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/OrderPage1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/OrderPage2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/SuccessOrderPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClickOrderDownButtonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClickOrderUpButtonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClickPriceQuestionButtonTest.java" afterDir="false" />
+    <list default="true" id="b9653a77-1a05-4bc2-a8f5-26478238d4ab" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ClickFAQTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPopup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/OrderPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/OrderPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SuccessOrderPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClickOrderDownButtonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClickOrderUpButtonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClickOrderButtonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClickPriceQuestionButtonTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +58,11 @@
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ClickPriceQuestionButtonTest.checkClickPriceQuestion">
-    <configuration name="ClickOrderDownButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClickFAQTest">
+    <configuration name="ClickFAQTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_4" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ClickOrderDownButtonTest" />
+      <option name="MAIN_CLASS_NAME" value="ClickFAQTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
@@ -82,10 +72,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClickOrderUpButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClickFAQTest.checkClickPriceQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_4" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ClickOrderUpButtonTest" />
+      <option name="MAIN_CLASS_NAME" value="ClickFAQTest" />
+      <option name="METHOD_NAME" value="checkClickPriceQuestion" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="browser" value="chrome" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClickOrderButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint_4" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClickOrderButtonTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
@@ -96,10 +99,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClickOrderUpButtonTest.checkClickOrderButtonUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClickOrderButtonTest.checkClickOrderButtonUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_4" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ClickOrderUpButtonTest" />
+      <option name="MAIN_CLASS_NAME" value="ClickOrderButtonTest" />
       <option name="METHOD_NAME" value="checkClickOrderButtonUp" />
       <option name="TEST_OBJECT" value="method" />
       <envs>
@@ -109,25 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClickPriceQuestionButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClickOrderDownButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_4" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ClickPriceQuestionButtonTest" />
+      <option name="MAIN_CLASS_NAME" value="ClickOrderDownButtonTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <envs>
-        <env name="browser" value="chrome" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClickPriceQuestionButtonTest.checkClickPriceQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sprint_4" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ClickPriceQuestionButtonTest" />
-      <option name="METHOD_NAME" value="checkClickPriceQuestion" />
-      <option name="TEST_OBJECT" value="method" />
       <envs>
         <env name="browser" value="chrome" />
       </envs>
@@ -147,18 +137,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ClickFAQTest" />
+      <item itemvalue="JUnit.ClickFAQTest.checkClickPriceQuestion" />
+      <item itemvalue="JUnit.ClickOrderButtonTest" />
+      <item itemvalue="JUnit.ClickOrderButtonTest.checkClickOrderButtonUp" />
       <item itemvalue="JUnit.ClickOrderDownButtonTest" />
-      <item itemvalue="JUnit.ClickPriceQuestionButtonTest.checkClickPriceQuestion" />
-      <item itemvalue="JUnit.ClickOrderUpButtonTest.checkClickOrderButtonUp" />
-      <item itemvalue="JUnit.ClickPriceQuestionButtonTest" />
-      <item itemvalue="JUnit.ClickOrderUpButtonTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClickPriceQuestionButtonTest.checkClickPriceQuestion" />
-        <item itemvalue="JUnit.ClickOrderUpButtonTest.checkClickOrderButtonUp" />
-        <item itemvalue="JUnit.ClickPriceQuestionButtonTest" />
-        <item itemvalue="JUnit.ClickOrderUpButtonTest" />
+        <item itemvalue="JUnit.ClickFAQTest" />
+        <item itemvalue="JUnit.ClickFAQTest.checkClickPriceQuestion" />
+        <item itemvalue="JUnit.ClickOrderButtonTest" />
+        <item itemvalue="JUnit.ClickOrderButtonTest.checkClickOrderButtonUp" />
         <item itemvalue="JUnit.ClickOrderDownButtonTest" />
       </list>
     </recent_temporary>
@@ -172,7 +162,19 @@
       <option name="presentableId" value="Default" />
       <updated>1677493886357</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1679842833812</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679842833812</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

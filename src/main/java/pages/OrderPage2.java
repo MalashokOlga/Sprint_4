@@ -61,7 +61,7 @@ public class OrderPage2 {
     public OrderPage2 clickPeriodList(String period) throws InterruptedException {
         driver.findElement(rentalPeriod).click(); //клик по стрелочке
         Thread.sleep(500);
-        for (int i = 0; i <= 6; i = i + 1) {
+        for (int i = 0; i <= periodListItems.length; i = i + 1) {
             String text = driver.findElement(periodListItems[i]).getText();
             if (period.equals(text)) {
                 driver.findElement(periodListItems[i]).click();

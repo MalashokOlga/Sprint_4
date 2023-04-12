@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 //Всплывающее окно "Хотите оформить заказ?" и всплывающее окно "Заказ оформлен"
-public class ConfirmOrderPage {
+public class ConfirmOrderPopup {
     //поле драйвер
     private final WebDriver driver;
 
@@ -24,12 +24,12 @@ public class ConfirmOrderPage {
     private final By btnStatus = By.xpath(".//*[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Посмотреть статус']");
 
     //конструктор класса ConfirmOrderPage
-    public ConfirmOrderPage(WebDriver driver) {
+    public ConfirmOrderPopup(WebDriver driver) {
         this.driver = driver;
     }
 
     //метод клика по кнопке "Да"
-    public ConfirmOrderPage clickBtnYes() {
+    public ConfirmOrderPopup clickBtnYes() {
         if (driver.findElement(orderWindow).isDisplayed()) {
             driver.findElement(btnYes).click();
         }
@@ -37,7 +37,7 @@ public class ConfirmOrderPage {
     }
 
     //метод клика по кнопке "Нет"
-    public ConfirmOrderPage clickBtnNo() {
+    public ConfirmOrderPopup clickBtnNo() {
         if (driver.findElement(orderWindow).isDisplayed()) {
             driver.findElement(btnNo).click();
         }
@@ -45,13 +45,13 @@ public class ConfirmOrderPage {
     }
 
     //метод проверки появления всплывающего окна "Заказ оформлен"
-    public ConfirmOrderPage isSuccessVisible() {
+    public ConfirmOrderPopup isSuccessVisible() {
         driver.findElement(successOrderWindow).isDisplayed();
         return this;
     }
 
     //метод клика по кнопке "Посмотреть статус" во всплывающем окне подтверждения заказа
-    public ConfirmOrderPage clickBtnStatus() {
+    public ConfirmOrderPopup clickBtnStatus() {
         if (driver.findElement(successOrderWindow).isDisplayed()) {
             driver.findElement(btnStatus).click();
         }

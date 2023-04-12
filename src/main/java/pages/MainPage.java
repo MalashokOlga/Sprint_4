@@ -20,26 +20,6 @@ public class MainPage {
     //кнопка кук "Да все привыкли"
     private final By btnCookie = By.xpath(".//*[@id='rcc-confirm-button']");
 
-    //массив для FAQ (вопросы)
-    private final By[] faqQuestion = {By.xpath(".//*[@id='accordion__heading-0']"),
-                                  By.xpath(".//*[@id='accordion__heading-1']"),
-                                  By.xpath(".//*[@id='accordion__heading-2']"),
-                                  By.xpath(".//*[@id='accordion__heading-3']"),
-                                  By.xpath(".//*[@id='accordion__heading-4']"),
-                                  By.xpath(".//*[@id='accordion__heading-5']"),
-                                  By.xpath(".//*[@id='accordion__heading-6']"),
-                                  By.xpath(".//*[@id='accordion__heading-7']")};
-
-    //массив для ответов FAQ
-    private final By[] faqAnsw = {By.xpath(".//*[@id='accordion__panel-0']"),
-            By.xpath(".//*[@id='accordion__panel-1']"),
-            By.xpath(".//*[@id='accordion__panel-2']"),
-            By.xpath(".//*[@id='accordion__panel-3']"),
-            By.xpath(".//*[@id='accordion__panel-4']"),
-            By.xpath(".//*[@id='accordion__panel-5']"),
-            By.xpath(".//*[@id='accordion__panel-6']"),
-            By.xpath(".//*[@id='accordion__panel -7']")};
-
     //конструктор класса MainPage
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -55,37 +35,38 @@ public class MainPage {
         return this;
     }
 
-    //метод клика по верхней кнопке "Заказать"
-    public MainPage clickBtnOrderUp() {
-        driver.findElement(btnOrderUp).click();
-        return this;
-    }
-    //метод клика по нижней кнопке "Заказать"
-    public MainPage clickBtnOrderDown() {
-        //доскроллить до элемента
-        WebElement element = driver.findElement(btnOrderDown);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-        //кликнуть на элемент
-        driver.findElement(btnOrderDown).click();
-        return this;
-    }
-    //метод проверки соответствия текста ответа заданным параметрам
-    public boolean faqList(String question, String answer) {
-        int j = 0;
-        //проверяем, что текст вопроса соответствует
-        for (int i = 0; i < 8; i = i + 1) {
-            //ищем нужный вопрос - доскроллить до элемента
-            WebElement element = driver.findElement(faqQuestion[i]);
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-            if (question.equals(driver.findElement(faqQuestion[i]).getText())) {
-                //клик на вопрос
-                driver.findElement(faqQuestion[i]).click();
-                //проверяем, что текст ответа соответствует
-                if (answer.equals(driver.findElement(faqAnsw[i]).getText())) {
-                    j = i;
-                }
-            }
+    //метод клика по кнопкам "Заказать", в зависимости от переданных параметров
+    public MainPage clickBtnOrder(String button) throws InterruptedException {
+        switch (button) {
+            case "верх":
+                //клик по верхней кнопке "Заказать"
+                driver.findElement(btnOrderUp).click();
+                //return this;
+            case "низ":
+                //доскроллить до элемента
+                WebElement element = driver.findElement(btnOrderDown);
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+                Thread.sleep(500);
+                //клик по нижней кнопке "Заказать"
+                driver.findElement(btnOrderDown).click();
+                //return this;
         }
-        return driver.findElement(faqAnsw[j]).isDisplayed();
+        return this;
+    }
+
+    //метод нахождения вопроса и проверки, что есть ответ
+    public boolean faqList(String questionLocator, String answerLocator) throws InterruptedException {
+        //скроллим до элемента
+        WebElement element = driver.findElement(By.xpath(questionLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+        //клик по элементу
+        driver.findElement(By.xpath(questionLocator)).click();
+        Thread.sleep(500);//чтобы успеть увидеть клик - это исключительно для себя
+        return driver.findElement(By.xpath(answerLocator)).isEnabled();
+    }
+
+    //метод передачи текста ответа в тест для сравнения
+    public String faqAnswText(String answerLocator) {
+        return driver.findElement(By.xpath(answerLocator)).getText();
     }
 }

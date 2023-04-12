@@ -1,6 +1,5 @@
 import extensions.WebDriverFactory;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runners.Parameterized;
@@ -11,7 +10,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Parameterized.class)
 //тест клика на верхнюю кнопку "Заказать" и заполнения полей заказа
-public class ClickOrderUpButtonTest {
+public class ClickOrderButtonTest {
     private WebDriver driver;
     @Parameterized.Parameter
     public String name;
@@ -31,12 +30,14 @@ public class ClickOrderUpButtonTest {
     public String colour;
     @Parameterized.Parameter(8)
     public String comment;
+    @Parameterized.Parameter(9) //параметр для выбора кнопки "Заказать" - верхней или нижней
+    public String button;
 
     @Parameterized.Parameters(name = "{index}: данные для заказа" )
     public static Object[][] userData() {
         return new Object[][] {
-                { "Оля", "Мал", "Саратовская", "Волгоград", "89998887766", "9", "двое суток", "серый", "хочу самокат" },
-                { "Ваня", "Петров", "Южная", "Таганская", "89992227766", "8", "трое суток", "черный", "очень хочу самокат" } //не работает без комменатрия
+                { "Оля", "Мал", "Саратовская", "Волгоград", "89998887766", "9", "двое суток", "серый", "хочу самокат", "низ" },
+                { "Ваня", "Петров", "Южная", "Таганская", "89992227766", "8", "трое суток", "черный", "очень хочу самокат", "верх" } //не работает без комменатрия
         };
     }
 
@@ -50,7 +51,8 @@ public class ClickOrderUpButtonTest {
     public void checkClickOrderButtonUp() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
         mainPage.clickBtnCookie();// клик по кнопке "Да все привыкли"
-        mainPage.clickBtnOrderUp();// клик по кнопке "Заказать"
+        //mainPage.clickBtnOrderUp();// клик по верхней кнопке "Заказать"
+        mainPage.clickBtnOrder(button); //клик по выбранной в параметрах кнопке заказать
     //заполняем поля страницы "Для кого самокат"
         OrderPage1 orderPage1 = new OrderPage1(driver);
         orderPage1.setCustomerName(name);//добавили имя
@@ -70,15 +72,12 @@ public class ClickOrderUpButtonTest {
         orderPage2.setComment(comment); //добавить комментарий
         orderPage2.clickBtnOrder(); //клик по кнопке "Заказать"
     //проверить 2 всплывающих окна
-        ConfirmOrderPage confirmOrderPage = new ConfirmOrderPage(driver);
+        ConfirmOrderPopup confirmOrderPopup = new ConfirmOrderPopup(driver);
         //confirmOrderPage.clickBtnNo();// клик по кнопке "Нет" в качестве проверки, что окно появляется, т.к. кнопка "Да" не работает в chrome
-        confirmOrderPage.clickBtnYes();// клик по кнопке "Да"
-        confirmOrderPage.isSuccessVisible();//проверка всплывающего окна "Заказ оформлен"
-        confirmOrderPage.clickBtnStatus();//клик по кнопке "Посмотреть статус"
+        confirmOrderPopup.clickBtnYes();// клик по кнопке "Да"
+        confirmOrderPopup.isSuccessVisible();//проверка всплывающего окна "Заказ оформлен"
+        confirmOrderPopup.clickBtnStatus();//клик по кнопке "Посмотреть статус"
         //нужна ли проверка, что происходит переход на страницу с данными о заказе??
-        //SuccessOrderPage successOrderPage = new SuccessOrderPage(driver);
-        //successOrderPage.isSuccessVisible();//проверка всплывающего окна "Заказ оформлен"
-        //successOrderPage.clickBtnStatus();//клик по кнопке "Посмотреть статус"
     }
 
     @After
