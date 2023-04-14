@@ -20,14 +20,12 @@ public class MainPage {
     //кнопка кук "Да все привыкли"
     private final By btnCookie = By.xpath(".//*[@id='rcc-confirm-button']");
 
-    //конструктор класса MainPage
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
 
     //метод клика по кнопке кук "Да все привыкли"
     public MainPage clickBtnCookie() {
-        //доскроллить до элемента
         WebElement element = driver.findElement(btnCookie);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
         //кликнуть на элемент
@@ -39,29 +37,22 @@ public class MainPage {
     public MainPage clickBtnOrder(String button) throws InterruptedException {
         switch (button) {
             case "верх":
-                //клик по верхней кнопке "Заказать"
                 driver.findElement(btnOrderUp).click();
-                //return this;
             case "низ":
-                //доскроллить до элемента
                 WebElement element = driver.findElement(btnOrderDown);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
                 Thread.sleep(500);
-                //клик по нижней кнопке "Заказать"
                 driver.findElement(btnOrderDown).click();
-                //return this;
         }
         return this;
     }
 
     //метод нахождения вопроса и проверки, что есть ответ
     public boolean faqList(String questionLocator, String answerLocator) throws InterruptedException {
-        //скроллим до элемента
         WebElement element = driver.findElement(By.xpath(questionLocator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-        //клик по элементу
         driver.findElement(By.xpath(questionLocator)).click();
-        Thread.sleep(500);//чтобы успеть увидеть клик - это исключительно для себя
+        Thread.sleep(500);
         return driver.findElement(By.xpath(answerLocator)).isEnabled();
     }
 

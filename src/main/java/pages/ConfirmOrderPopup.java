@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 //Всплывающее окно "Хотите оформить заказ?" и всплывающее окно "Заказ оформлен"
 public class ConfirmOrderPopup {
+
     //поле драйвер
     private final WebDriver driver;
 
@@ -23,7 +24,6 @@ public class ConfirmOrderPopup {
     //кнопка "Посмотреть статус" всплывающего окна "Заказ оформлен"
     private final By btnStatus = By.xpath(".//*[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Посмотреть статус']");
 
-    //конструктор класса ConfirmOrderPage
     public ConfirmOrderPopup(WebDriver driver) {
         this.driver = driver;
     }

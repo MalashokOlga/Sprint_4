@@ -33,12 +33,9 @@ public class OrderPage2 {
     //поле "Комментарий"
     private final By setComment = By.xpath(".//*[@placeholder='Комментарий для курьера']");
 
-    //кнопка "Назад" - нужен ли тест для этой кнопки?? вряд ли
-
     //кнопка "Заказать"
     private final By btnOrder = By.xpath(".//*[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
-    //конструктор класса OrderPage2
     public OrderPage2(WebDriver driver) {
         this.driver = driver;
     }
@@ -50,7 +47,6 @@ public class OrderPage2 {
     }
 
     //метод клика по нужной дате
-
     public void clickCalendar(String data) throws InterruptedException {
         driver.findElement(deliveryDate).click();
         Thread.sleep(500);
@@ -59,7 +55,7 @@ public class OrderPage2 {
 
     //метод клика по полю "Срок аренды" и нужному сроку аренды
     public OrderPage2 clickPeriodList(String period) throws InterruptedException {
-        driver.findElement(rentalPeriod).click(); //клик по стрелочке
+        driver.findElement(rentalPeriod).click();
         Thread.sleep(500);
         for (int i = 0; i <= periodListItems.length; i = i + 1) {
             String text = driver.findElement(periodListItems[i]).getText();
@@ -72,7 +68,6 @@ public class OrderPage2 {
     }
     //метод клика по чекбоксу цвета
     public OrderPage2 clickSetColour(String colour) {
-        //ищем нужный цвет
         if (colour.equals("серый")) {
             driver.findElement(setGreyColour).click();
         } else {

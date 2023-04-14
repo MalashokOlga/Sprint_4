@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Parameterized.class)
-//тест клика на верхнюю кнопку "Заказать" и заполнения полей заказа
+//тест клика на обе кнопки "Заказать" и заполнения полей заказа
 public class ClickOrderButtonTest {
     private WebDriver driver;
     @Parameterized.Parameter
@@ -30,7 +30,7 @@ public class ClickOrderButtonTest {
     public String colour;
     @Parameterized.Parameter(8)
     public String comment;
-    @Parameterized.Parameter(9) //параметр для выбора кнопки "Заказать" - верхней или нижней
+    @Parameterized.Parameter(9)
     public String button;
 
     @Parameterized.Parameters(name = "{index}: данные для заказа" )
@@ -47,37 +47,33 @@ public class ClickOrderButtonTest {
     }
 
     @Test
-    //клик на кнопку "Заказать" и заполнение полей заказа
     public void checkClickOrderButtonUp() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickBtnCookie();// клик по кнопке "Да все привыкли"
-        //mainPage.clickBtnOrderUp();// клик по верхней кнопке "Заказать"
-        mainPage.clickBtnOrder(button); //клик по выбранной в параметрах кнопке заказать
-    //заполняем поля страницы "Для кого самокат"
+        mainPage.clickBtnCookie();
+        mainPage.clickBtnOrder(button);
+
         OrderPage1 orderPage1 = new OrderPage1(driver);
-        orderPage1.setCustomerName(name);//добавили имя
-        orderPage1.setCustomerSurname(surname);//добавили фамилию
-        orderPage1.setAddress(address);//добавили адрес
-        orderPage1.clickMetroStationInput();//клик по полю "Станция метро"
-        orderPage1.searchMetroStation(station); //поиск нужной станции
-        orderPage1.setPhone(phone);//добавили телефон
-        orderPage1.clickBtnNext();//клик по кнопке "Далее"
-    //заполняем поля страницы "Про аренду"
+        orderPage1.setCustomerName(name);
+        orderPage1.setCustomerSurname(surname);
+        orderPage1.setAddress(address);
+        orderPage1.clickMetroStationInput();
+        orderPage1.searchMetroStation(station);
+        orderPage1.setPhone(phone);
+        orderPage1.clickBtnNext();
+
         OrderPage2 orderPage2 = new OrderPage2(driver);
-        orderPage2.clickDeliveryDate();//клик по полю "Когда привезти самокат"
-        orderPage2.clickCalendar(date);//выбираем дату, можно объединить в один метод с предыдущим
-        //orderPage2.clickRentalPeriod();//клик по полю "Срок аренды"
-        orderPage2.clickPeriodList(period);//выбираем срок аренды
-        orderPage2.clickSetColour(colour); //выбор цвета самоката
-        orderPage2.setComment(comment); //добавить комментарий
-        orderPage2.clickBtnOrder(); //клик по кнопке "Заказать"
-    //проверить 2 всплывающих окна
+        orderPage2.clickDeliveryDate();
+        orderPage2.clickCalendar(date);
+        orderPage2.clickPeriodList(period);
+        orderPage2.clickSetColour(colour);
+        orderPage2.setComment(comment);
+        orderPage2.clickBtnOrder();
+
         ConfirmOrderPopup confirmOrderPopup = new ConfirmOrderPopup(driver);
         //confirmOrderPage.clickBtnNo();// клик по кнопке "Нет" в качестве проверки, что окно появляется, т.к. кнопка "Да" не работает в chrome
-        confirmOrderPopup.clickBtnYes();// клик по кнопке "Да"
-        confirmOrderPopup.isSuccessVisible();//проверка всплывающего окна "Заказ оформлен"
-        confirmOrderPopup.clickBtnStatus();//клик по кнопке "Посмотреть статус"
-        //нужна ли проверка, что происходит переход на страницу с данными о заказе??
+        confirmOrderPopup.clickBtnYes();
+        confirmOrderPopup.isSuccessVisible();
+        confirmOrderPopup.clickBtnStatus();
     }
 
     @After

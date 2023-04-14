@@ -28,7 +28,6 @@ public class OrderPage1 {
     //кнопка "Далее"
     private final By btnNext = By.xpath(".//*[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
-    //конструктор класса OrderPage1
     public OrderPage1(WebDriver driver) {
         this.driver = driver;
     }

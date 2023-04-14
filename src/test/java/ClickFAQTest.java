@@ -44,9 +44,9 @@ public class ClickFAQTest {
     @Test
     public void checkClickPriceQuestion() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickBtnCookie(); // клик по кнопке "Да все привыкли"
-        mainPage.faqList(questionLocator, answerLocator); //поиск нужного вопроса и клик на него
-        MatcherAssert.assertThat("Текст не совпадает", mainPage.faqAnswText(answerLocator), is(textAnswer));//сравнение текста из параметра и текста со страницы
+        mainPage.clickBtnCookie();
+        mainPage.faqList(questionLocator, answerLocator);
+        MatcherAssert.assertThat("Текст не совпадает", mainPage.faqAnswText(answerLocator), is(textAnswer));
     }
     @After
     public void teardown() {

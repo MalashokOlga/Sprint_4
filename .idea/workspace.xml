@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9653a77-1a05-4bc2-a8f5-26478238d4ab" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClickFAQTest.java" afterDir="false" />
+    <list default="true" id="b9653a77-1a05-4bc2-a8f5-26478238d4ab" name="Changes" comment="second commit: parametrized button Order added, ClickFAQTest fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPopup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ConfirmOrderPopup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/OrderPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/OrderPage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/OrderPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/OrderPage2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SuccessOrderPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ClickOrderDownButtonTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ClickOrderUpButtonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClickOrderButtonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ClickPriceQuestionButtonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClickFAQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClickFAQTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClickOrderButtonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClickOrderButtonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Yandex_practicum/Sprint_4/pom.xml",
+    "last_opened_file_path": "D:/Yandex_practicum/Sprint_4",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
@@ -169,12 +167,20 @@
       <option name="project" value="LOCAL" />
       <updated>1679842833812</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="second commit: parametrized button Order added, ClickFAQTest fixed">
+      <created>1681334799838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681334799838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="second commit: parametrized button Order added, ClickFAQTest fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit: parametrized button Order added, ClickFAQTest fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
